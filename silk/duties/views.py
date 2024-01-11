@@ -5,5 +5,9 @@ from .serializers import DutiesSerializer
 
 
 class DutiesAPIView(generics.ListAPIView):
-    queryset = Duties.objects.all()
+    """Вьюха для выдачи данных по пошлинам."""
+
+    queryset = Duties.objects.select_related(
+        'crop',
+    ).all()
     serializer_class = DutiesSerializer

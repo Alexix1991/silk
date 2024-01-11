@@ -7,6 +7,8 @@ from .models import (
 
 
 class CropsSerializer(serializers.ModelSerializer):
+    """Сериализатор культур"""
+
     class Meta:
         model = Crops
         fields = ('id', 'name')
